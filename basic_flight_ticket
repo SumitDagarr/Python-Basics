@@ -1,0 +1,164 @@
+class Ticket():
+
+	print('\n***Welcome to IGI internationl Airport***')
+
+	def __init__(self,location1 = 'x' ,location2= 'xx', name='',age='',mobile='', fare = 0):
+
+		self.location1 =location1
+		self.location2 = location2
+		self.fare = fare
+		self.name = name
+		self.age = age
+		self.mobile = mobile
+
+	def __str__(self):
+		return f'Checking ticket from {location1} to {location2}'
+
+	def show_loc(self):
+
+		locations = ['DELHI', 'MUMBAI', 'KOLKATTA', 'BANGLORE', 'CHENNAI']
+
+		print('Available Airports : ',locations)
+
+	def book_ticket(self):
+
+	
+		while True:
+
+			location1 = input('Ticket book from: ')
+			location2 = input('Ticket book to: ')
+
+
+			if location1 != 'DELHI' and location1 != 'MUMBAI' and location1 != 'KOLKATTA' and location1 != 'BANGLORE' and location1 != 'CHENNAI' and location2 != 'DELHI' and location2 != 'MUMBAI' and location2 != 'KOLKATTA' and location2 != 'BANGLORE' and location2 != 'CHENNAI':
+
+				print('Please try again')
+				location1 = input('Ticket book from: ')
+				location2 = input('Ticket book to: ')
+
+
+			else:
+
+
+				if location1.upper() == 'DELHI' and location2.upper() == 'MUMBAI':
+					print('Fare: 3600 (Rs)')
+					self.fare += 3600
+
+				elif location1.upper() == 'DELHI' and location2.upper() == 'KOLKATTA':
+					print('Fare: 4900 (Rs)')
+					self.fare += 4900
+
+				elif location1.upper() == 'DELHI' and location2.upper() == 'BANGLORE':
+					print('Fare: 5200 (Rs)')
+					self.fare += 5200
+
+				elif location1.upper() == 'DELHI' and location2.upper() == 'CHENNAI':
+					print('Fair: 5800 (Rs)')
+					self.fare += 5800
+
+				elif location1.upper() == 'MUMBAI' and location2.upper() == 'DELHI':
+					print('Fare: 3600 (Rs)')
+					self.fare += 3600
+
+
+				elif location1.upper() == 'MUMBAI' and location2.upper() == 'KOLKATTA':
+					print('Fare: 3700 (Rs)')
+					self.fare += 3700
+
+				elif location1.upper() == 'MUMBAI' and location2.upper() == 'BANGLORE':
+					print('Fare: 2500 (Rs)')
+					self.fare += 2500
+
+				elif location1.upper() == 'MUMBAI' and location2.upper() == 'CHENNAI':
+					print('Fare: 3200 (Rs)')
+					self.fare += 3200
+
+				elif location1.upper() == 'KOLKATTA' and location2.upper() == 'DELHI':
+					print('Fare: 4900 (Rs)')
+					self.fare += 4900
+
+				elif location1.upper() == 'KOLKATTA' and location2.upper() == 'MUMBAI':
+					print('Fare: 3700 (Rs)')
+					self.fare += 3700
+
+				elif location1.upper() == 'KOLKATTA' and location2.upper() == 'BANGLORE':
+					print('Fare: 4500 (Rs)')
+					self.fare += 4500
+
+				elif location1.upper() == 'KOLKATTA' and location2.upper() == 'CHENNAI':
+					print('Fare: 5300 (Rs)')
+					self.fare += 5300
+
+				elif location1.upper() == 'BANGLORE' and location2.upper() == 'DELHI':
+					print('Fare: 5200 (Rs)')
+					self.fare += 5200
+
+				elif location1.upper() == 'BANGLORE' and location2.upper() == 'MUMBAI':
+					print('Fare: 2500 (Rs)')
+					self.fare += 2500
+
+				elif location1.upper() == 'BANGLORE' and location2.upper() == 'KOLKATTA':
+					print('Fare: 4500 (Rs)')
+					self.fare += 4500
+
+				elif location1.upper() == 'BANGLORE' and location2.upper() == 'CHENNAI':
+					print('Fare: 2100 (Rs)')
+					self.fare += 2100
+
+				elif location1.upper() == 'CHENNAI' and location2.upper() == 'DELHI':
+					print('Fare: 5800 (Rs)')
+					self.fare += 5800
+
+				elif location1.upper() == 'CHENNAI' and location2.upper() == 'MUMBAI':
+					print('Fare: 3200 (Rs)')
+					self.self.fare += 2100
+
+				elif location1.upper() == 'CHENNAI' and location2.upper() == 'KOLKATTA':
+					print('Fare: 5300 (Rs)')
+					self.fare += 2100
+
+				elif location1.upper() == 'CHENNAI' and location2.upper() == 'BANGLORE':
+					print('Fare: 2100 (Rs)')
+					self.fare += 2100
+
+			break
+
+		self.location1 = location1
+		self.location2 = location2
+			
+
+	def passanger(self):
+
+		self.name = input('Enter passanger name: ')
+		self.age = input('Age: ')
+		self.mobile = input('Mobile NO.: ')
+
+		
+	def final_bill(self):
+    
+    t = int(self.fare)
+		fina_bil = t+200
+		
+		print(f'|	Fare:{self.fare} RS			Service Charges: 200 RS		|\n|	Total Bill: 				{fina_bil} RS			|')
+		print('|_______________________________________________________________________|')
+
+
+	def ticket_display(self):
+
+		print('\n\n\n				YOUR TICKET')
+		print('________________________________________________________________________')
+		print('|									|')
+		print(f'|	Name:					{self.name}			|')
+		print(f'|	Age:					{self.age}			|')
+		print(f'|	Mobile:					{self.mobile}		|')
+		print(f'|	Taking Flight from:			{self.location1}			|')
+		print(f'|	Going to:				{self.location2}			|')
+		print('|									|')
+		print('|_______________________________________________________________________|')
+
+
+t = Ticket()
+t.show_loc()
+t.book_ticket()
+t.passanger()
+t.ticket_display()
+t.final_bill()
