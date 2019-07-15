@@ -1,0 +1,192 @@
+import random
+class Hotel():
+
+
+
+    print('Welcome to Hotel Royal Palace ')
+
+    def __init__(self,cname='',caddress='',cmobile=9812812391,cstay=0,rnumber=101, tbill=0, allrooms=[]):
+        self.cname = cname
+        self.caddress = caddress
+        self.cmobile = cmobile
+        self.rnumber = rnumber
+        self.cstay = cstay
+        self.tbill = tbill
+        self.allrooms = allrooms
+
+    def select_room(self):
+        print('We have different room: ')
+        print('Press 1 for SINGLE -------> 2000/Night')
+        print('Press 2 for DOUBLE -------> 3000/Night')
+        print('Press 3 for SUIT -------> 4000/Night')
+        print('Press 4 for QUEEN -------> 5000/Night')
+        print('Press 5 for KING -------> 6000/Night')
+        print('Press 6 for STUDIO -------> 7000/Night')
+        print('Press 7 for main menu ')
+        choose = int(input('Please select your option: '))
+        if choose == 1:
+            self.tbill += 2000
+        elif choose == 2:
+            self.tbill += 3000
+        elif choose == 3:
+            self.tbill += 4000
+        elif choose == 4:
+            self.tbill += 5000
+        elif choose == 5:
+            self.bill += 6000
+        elif choose == 6:
+            self.tbill += 7000
+        elif choose == 7:
+            print('\n\n')
+            main()
+        else:
+            print('Invalid Input')
+
+
+
+    def book_room(self):
+
+        print('Please Enter your details for booking')
+
+        self.cname = input('Name: ')
+
+        self.cstay = input('For how many days you want to stay? ')
+
+        self.caddress = input('Enter your address: ')
+
+        self.cmobile = input('Enter Mobile number: ')
+
+
+
+    def guest_info(self):
+        a = []
+        print(f'Name: {self.cname}')
+        print(f'Address: {self.caddress}')
+        print(f'No of days in hotel: {self.cstay}')
+        print(f'Mobile Number: {self.cmobile}')
+        print(f'Room Number: {self.rnumber}')
+        a.append(self.rnumber)
+        self.rnumber += 1
+
+
+    def food(self):
+
+        input('Enter room number')
+        print('***FOOD MENU***')
+        print("1.water----->Rs20", "2.tea----->Rs10", "3.breakfast combo--->Rs90", "4.lunch---->Rs110",
+              "5.dinner--->Rs150", "6.Exit")
+
+        a = int(input('Please select your option: '))
+        if a == 1:
+            self.tbill += 20
+            print('Your bill for Food is 20 Rs')
+        elif a == 2:
+            self.tbill += 10
+            print('Your bill for Food is 10 Rs')
+        elif a == 3:
+            self.tbill += 90
+            print('Your bill for Food is 90 Rs')
+        elif a == 4:
+            self.tbill += 110
+            print('Your bill for Food is 110 Rs')
+        elif a == 5:
+            self.tbill += 150
+            print('Your bill for Food is 150 Rs')
+        elif a == 6:
+            print('\n\n')
+            main()
+        else:
+            print('Invalid Input')
+
+    def laundary(self):
+
+        input('Enter room number')
+        print('***LAUNDARY MENU***')
+        print("1.Shorts----->Rs3", "2.Trousers----->Rs4", "3.Shirt--->Rs5", "4.Jeans---->Rs6", "5.Girlsuit--->Rs8",
+              "6.Exit")
+
+        b = int(input('Please select your option: '))
+        if b == 1:
+            self.tbill += 3
+            print('Your Laundary bill is 3 Rs')
+        elif b == 2:
+            self.tbill += 4
+            print('Your Laundary bill is 4 Rs')
+        elif b == 3:
+            self.tbill += 5
+            print('Your Laundary bill is 5 Rs')
+        elif b == 4:
+            self.tbill += 6
+            print('Your Laundary bill is 6 Rs')
+        elif b == 5:
+            self.tbill += 8
+            print('Your Laundary bill is 8 Rs')
+        elif b == 6:
+            print('\n\n')
+            main()
+        else:
+            print('Invalid Input')
+
+
+
+
+
+
+    def check_out(self):
+        a = self.tbill
+        input('Enter Room Number: ')
+        print(f'Amount Payable : Rs {a}')
+
+
+
+
+
+
+def main():
+    h = Hotel()
+    print('\n \n')
+    print('Press 1 for Booking Room: ')
+    print('Press 2 for Checking Room Rates: ')
+    print('Press 3 for Ordering Food')
+    print('Press 4 for Laundary')
+    print('Press 5 for Checkout')
+    c = int(input("Please select your option: "))
+    while True:
+        if c == 1:
+            print('\n\n')
+            h.select_room()
+            print('\n\n')
+            h.book_room()
+            print('\n \n')
+            h.guest_info()
+            print('\n \n')
+            return main()
+        elif c == 2:
+            print('\n\n')
+            h.select_room()
+            print('\n\n')
+            h.book_room()
+            print('\n\n')
+            h.guest_info()
+            print('\n\n')
+            return main()
+        elif c == 3:
+            print('\n\n')
+            h.food()
+            print('\n\n')
+            return main()
+        elif c == 4:
+            print('\n\n')
+            h.laundary()
+            print('\n\n')
+            return main()
+        elif c == 5:
+            h.check_out()
+            print('\n\n')
+            return main()
+
+
+
+
+
+main()
