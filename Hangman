@@ -1,0 +1,50 @@
+import random
+
+def hangman():
+	rand = random.choice(['dolls', 'drawer', 'wild', 'repeat', 'toothpaste', 'crawl', 'order', 'divide', 'direction', 'distance'])
+	print(rand)
+	length = len(rand)
+	hidden_word = []
+	lives = 6
+	guessed = ''
+	for character in rand:
+		hidden_word.append('_')
+	while lives != 0:
+		print(hidden_word)
+		guess = input('\n\nGuess the word: ')
+		if guess in guessed:
+			print('YOU HAVE ALREADY GUESSED THIS WORD!!')
+		elif len(guess) > 1:
+			print('YOU CAN ONLY GUESS A SINGLE LETTER AT A TIME!! ')
+		elif guess in rand:
+			print('YOUR GUESS IS CORRECT!!')
+			for i in range(0,length):
+				if rand[i] == guess:
+					hidden_word[i] = guess
+			if not '_' in hidden_word:
+				print(hidden_word)
+				print('***YOU WON THE GAME***')
+				break
+			
+		else:
+			print("GUESSED LETTER IS NOT IN THE WORD!!")
+			guessed = ''.join(guess)
+			lives -= 1
+
+	else:
+		print('YOU LOST THE MATCH!!')
+		
+def play_again():
+	p = input('\nDo You wnat to play again? y or n')
+	if p[0].lower() == 'y':
+		return hangman()
+	else:
+		print('Exit')
+
+
+hangman()
+play_again()
+
+
+
+
